@@ -1,5 +1,9 @@
 package br.com.ximenes.simpleproject.controller;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 
 import javax.inject.Inject;
@@ -16,19 +20,25 @@ import br.com.ximenes.simpleproject.security.Protection;
 @Controller
 public class IndexController {
 
-	private Result result;
-	private UserDao userDao;
-
-	protected IndexController() {}
-
-	@Inject
-	public IndexController(Result result, UserDao userDao) {
-		this.result = result;
-		this.userDao = userDao;
-	}
-
+	@Inject private Result result;
+	@Inject private UserDao userDao;
+	
 	@Path("/")
 	public void index() {
+//		Calendar c = Calendar.getInstance();
+//        c.set(2013, Calendar.FEBRUARY, 28);
+//        Date date = c.getTime();
+//        result.include("datanaoformatada", date);
+//        DateFormat formataData = DateFormat.getDateInstance();
+//		result.include("dataformatada", formataData.format(date));
+//         
+		Calendar c = Calendar.getInstance();
+		Date data = c.getTime();
+        DateFormat f = DateFormat.getDateInstance(DateFormat.FULL);
+        f = DateFormat.getDateInstance(DateFormat.SHORT);
+        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+        result.include("data",sdf.format(data));
+
 	}
 
 	@Get("/dashboard")

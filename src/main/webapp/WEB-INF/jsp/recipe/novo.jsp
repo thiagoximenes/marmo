@@ -26,13 +26,13 @@
 	<div class="content">
 		<div class="row align-items-end">
 			<div class="col">
-<%-- 				<form class="form-style form-basic" action="${linkTo[UserController].add(null)}" method="post"> --%>
-<%-- 					<c:import url="../forms/form-user.jsp"></c:import> --%>
-<!-- 					<input type="submit" class="btn btn-primary" value="Register" /> -->
-<%-- 					<a type="button" class="btn btn-dark" href="${linkTo[UserController].list()}" data-toggle="tooltip" data-placement="bottom" title="Back to list"> --%>
+				<form class="form-style form-basic" action="/marmo/recipes" method="post">
+					<c:import url="form.jsp"></c:import>
+					<input type="submit" class="btn btn-primary" value="Register" />
+<%-- 					<a type="button" class="btn btn-dark" href="${linkTo[RecipeController].list()}" data-toggle="tooltip" data-placement="bottom" title="Back to list"> --%>
 <!-- 						<i class="fa fa-arrow-left" aria-hidden="true"></i> -->
 <!-- 					</a> -->
-<!-- 				</form> -->
+				</form>
 			</div>
 		</div>
 	</div>
