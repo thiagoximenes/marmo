@@ -1,0 +1,22 @@
+@charset "UTF-8";
+
+table tr td, table tr th {
+	vertical-align: inherit!important;
+/* 	word-wrap: break-word; */
+	white-space: nowrap;
+}
+
+
+table thead tr th {
+	cursor: pointer;
+}
+
+table i {
+	color: #5b819f;
+	transition: 0.1s;
+}
+
+table i:focus, table i:hover {
+	color: #7ea1c8;
+	transition: 0.1s;
+}

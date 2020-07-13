@@ -1,0 +1,21 @@
+@charset "UTF-8";
+
+.form-control {
+	border: 1px solid #d2ddec!important;
+	color: #12263f;
+	transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+.form-control:focus {
+    color: #12263f;
+    border: 1px solid #abaeb0 !important;
+    outline: 0;
+    box-shadow: none;
+}
+
+.form-signin{
+	width: 100%;
+	max-width: 420px;
+	padding: 0;
+	margin: 0 auto;	
+}
