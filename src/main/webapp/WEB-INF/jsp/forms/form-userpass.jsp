@@ -2,7 +2,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
 <c:if test="${user.id != null}">
-<form class="form-style" action="<c:url value="/users/${user.id}"/>" method="POST">
+<form class="form-style" action="<c:url value="/users/${user.id}/edit"/>" method="POST">
 	<input type="hidden" name="user.id" value="${user.id}" required />
 	<input type="hidden" name="user.name" value="${user.name}" /> 
 	<input type="hidden" name="user.surname" value="${user.surname}" />
@@ -12,7 +12,7 @@
 </c:if>
 
 <c:if test="${user.id == null}">
-<form class="form-style" action="<c:url value="/users/${loggedUser.user.id}"/>" method="POST">
+<form class="form-style" action="<c:url value="/users/${loggedUser.user.id}/edit"/>" method="POST">
 	<input type="hidden" name="usuario.id" value="${loggedUser.user.id}" required />
 	<input type="hidden" name="usuario.name" value="${loggedUser.user.name}" /> 
 	<input type="hidden" name="usuario.surname" value="${loggedUser.user.surname}" />
