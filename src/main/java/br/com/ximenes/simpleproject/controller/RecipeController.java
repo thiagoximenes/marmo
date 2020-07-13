@@ -16,15 +16,15 @@ public class RecipeController {
 
 	@Get("/recipes")
     public void index() {}
-    
+
+	@Get("/recipes/novo")
+	public void novo() {}
+
 	@Post("/recipes")
 	public void criar(Recipe recipe) {
 		recipeService.criar(recipe);
-    }
-
-	@Path("/recipes/novo")
-	public void novo() {}
-
+	}
+	
 	@Post("/recipes/editar")
 	public void atualizar(Recipe recipe) {
 		recipeService.atualizar(recipe);
