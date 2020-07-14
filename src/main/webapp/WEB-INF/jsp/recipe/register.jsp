@@ -9,9 +9,8 @@
 				<h6>
 					<nav aria-label="breadcrumb">
 						<ol class="breadcrumb">
-							<li class="breadcrumb-item"><a
-								href="${linkTo[IndexController].dashboard() }">Dashboard</a></li>
-<%-- 							<li class="breadcrumb-item" aria-current="page"><a href="${linkTo[RecipeController].list() }">Receitas</a></li> --%>
+							<li class="breadcrumb-item"><a href="${linkTo[IndexController].dashboard() }">Dashboard</a></li>
+							<li class="breadcrumb-item" aria-current="page"><a href="${linkTo[RecipeController].list() }">Receitas</a></li>
 							<li class="breadcrumb-item active" aria-current="page">Register</li>
 						</ol>
 					</nav>
@@ -28,10 +27,10 @@
 			<div class="col">
 				<form class="form-style form-basic" action="/marmo/recipes" method="post">
 					<c:import url="form.jsp"></c:import>
-					<input type="submit" class="btn btn-primary" value="Register" />
-<%-- 					<a type="button" class="btn btn-dark" href="${linkTo[RecipeController].list()}" data-toggle="tooltip" data-placement="bottom" title="Back to list"> --%>
-<!-- 						<i class="fa fa-arrow-left" aria-hidden="true"></i> -->
-<!-- 					</a> -->
+					<input type="submit" class="btn btn-primary" value="Registrar" />
+					<a type="button" class="btn btn-dark" href="${linkTo[RecipeController].list()}" data-toggle="tooltip" data-placement="bottom" title="Voltar">
+						<i class="fa fa-arrow-left" aria-hidden="true"></i>
+					</a>
 				</form>
 			</div>
 		</div>

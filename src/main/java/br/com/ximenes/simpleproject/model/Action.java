@@ -1,6 +1,7 @@
 package br.com.ximenes.simpleproject.model;
 
 import java.io.Serializable;
+import java.math.BigDecimal;
 
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -19,7 +20,7 @@ public class Action implements Serializable {
 	
 	private String createDate;
 	
-	private float value;
+	private BigDecimal value;
 
 	public Long getId() {
 		return id;
@@ -45,11 +46,11 @@ public class Action implements Serializable {
 		this.createDate = createDate;
 	}
 
-	public float getValue() {
+	public BigDecimal getValue() {
 		return value;
 	}
 
-	public void setValue(float value) {
+	public void setValue(BigDecimal value) {
 		this.value = value;
 	}
 
