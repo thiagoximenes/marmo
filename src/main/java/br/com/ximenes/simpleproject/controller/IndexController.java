@@ -12,8 +12,10 @@ import br.com.caelum.vraptor.Controller;
 import br.com.caelum.vraptor.Get;
 import br.com.caelum.vraptor.Path;
 import br.com.caelum.vraptor.Result;
+import br.com.ximenes.simpleproject.dao.RecipeDao;
 import br.com.ximenes.simpleproject.dao.UserDao;
 import br.com.ximenes.simpleproject.model.UserType;
+import br.com.ximenes.simpleproject.model.Recipe;
 import br.com.ximenes.simpleproject.model.User;
 import br.com.ximenes.simpleproject.security.Protection;
 
@@ -22,6 +24,7 @@ public class IndexController {
 
 	@Inject private Result result;
 	@Inject private UserDao userDao;
+	@Inject private RecipeDao recipeDao;
 	
 	@Path("/")
 	public void index() {
@@ -32,18 +35,20 @@ public class IndexController {
 //        DateFormat formataData = DateFormat.getDateInstance();
 //		result.include("dataformatada", formataData.format(date));
 //         
-		Calendar c = Calendar.getInstance();
-		Date data = c.getTime();
-        DateFormat f = DateFormat.getDateInstance(DateFormat.FULL);
-        f = DateFormat.getDateInstance(DateFormat.SHORT);
-        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
-        result.include("data",sdf.format(data));
+//		Calendar c = Calendar.getInstance();
+//		Date data = c.getTime();
+//        DateFormat f = DateFormat.getDateInstance(DateFormat.FULL);
+//        f = DateFormat.getDateInstance(DateFormat.SHORT);
+//        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+//        result.include("data",sdf.format(data));
 
 	}
 
 	@Get("/dashboard")
 	@Protection(type = { UserType.ADMIN, UserType.NORMAL })
 	public void dashboard() {
+		List<Recipe> recipes = recipeDao.list();
+		result.include("recipes", recipes);
 		List<User> users = userDao.list();
 		result.include("userType", UserType.values());
 		result.include("users", users);

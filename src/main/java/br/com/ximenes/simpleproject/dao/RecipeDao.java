@@ -55,7 +55,7 @@ public class RecipeDao {
 	
 	public List<Recipe> list() {
 		try {
-			TypedQuery<Recipe> query = manager.createQuery("select r from RECIPE r", Recipe.class);
+			TypedQuery<Recipe> query = manager.createQuery("select u from RECIPE u", Recipe.class);
 			return query.getResultList();
 		} finally {
 			manager.close();

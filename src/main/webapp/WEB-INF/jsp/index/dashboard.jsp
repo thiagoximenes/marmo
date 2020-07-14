@@ -26,41 +26,51 @@
 <div class="container-fluid">
 	<div class="content">
 		<div class="row align-items-end">
-			<div class="col-lg-4 col-md-6 col-sm-12">
-			<c:if test="${loggedUser.user.type == 'ADMIN' }">
-				<span class="h4">Users List </span><small>Quick View</small><br/><br/>
-				<c:forEach items="${users}" var="user">
-					<div class="col-12">
-						<div class="card mb-1">
-							<div class="card-body sm-card">
-								<div class="media">
-									<span class="float-left m-2 mr-4 ">
-										<img class="rounded-circle img-thumbnail" src="<c:url value="/img/profile.png"/>" />
-									</span>
-									<div class="media-body">
-										<span>${user.name} ${user.surname}</span><br/>
-										<span>${user.email} / ${user.login}</span><br/>
-											<c:if test="${user.type == 'ADMIN'}">
-												<span><small>Full access </small></span>
-												<span class="badge badge-warning">ADM</span>
-											</c:if>
-											<c:if test="${user.type == 'NORMAL'}">
-				                        		<span><small>Limited access </small></span>
-				                        		<span class="badge badge-secondary">USR</span>
-											</c:if>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</c:forEach>
-			</c:if>
+			<div class="col-lg-4 col-md-4 col-sm-12">
+<!-- 				<div class="table-responsive"> -->
+<!-- 					<table class="table table-hover"> -->
+<!-- 						<thead> -->
+<!-- 							<tr> -->
+<!-- 								<th scope="col">Receitas <i class="fas fa-sort"></i></th> -->
+<!-- 								<th scope="col">Data <i class="fas fa-sort"></i></th> -->
+<!-- 								<th scope="col">Valor <i class="fas fa-sort"></i></th> -->
+<!-- 							</tr> -->
+<!-- 						</thead> -->
+<!-- 						<tbody> -->
+<%-- 							<c:forEach items="${recipes}" var="recipe"> --%>
+<!-- 								<tr class="tr-item" role="row"> -->
+<%-- 									<td id="name"> ${recipe.name}</td> --%>
+<%-- 									<td id="createDate">${recipe.createDate}</td> --%>
+<%-- 									<td id="value">${recipe.value}</td> --%>
+<!-- 								</tr> -->
+<%-- 							</c:forEach> --%>
+<!-- 						</tbody> -->
+<!-- 					</table> -->
+<!-- 				</div> -->
 			</div>
-			<div class="col-lg-4 col-md-6 col-sm-12">
-				<a href="${linkTo[RecipeController].register()}">Registrar Receitas</a>
-<%-- 				<a href="${linkTo[ExpenseController].register()}">Registrar Despesas</a> --%>
+			<div class="col-lg-4 col-md-4 col-sm-12">
+<!-- 				<div class="table-responsive"> -->
+<!-- 					<table class="table table-hover"> -->
+<!-- 						<thead> -->
+<!-- 							<tr> -->
+<!-- 								<th scope="col">Despesas <i class="fas fa-sort"></i></th> -->
+<!-- 								<th scope="col">Data <i class="fas fa-sort"></i></th> -->
+<!-- 								<th scope="col">Valor <i class="fas fa-sort"></i></th> -->
+<!-- 							</tr> -->
+<!-- 						</thead> -->
+<!-- 						<tbody> -->
+<%-- 							<c:forEach items="${recipes}" var="recipe"> --%>
+<!-- 								<tr class="tr-item" role="row"> -->
+<%-- 									<td id="name"> ${recipe.name}</td> --%>
+<%-- 									<td id="createDate">${recipe.createDate}</td> --%>
+<%-- 									<td id="value">${recipe.value}</td> --%>
+<!-- 								</tr> -->
+<%-- 							</c:forEach> --%>
+<!-- 						</tbody> -->
+<!-- 					</table> -->
+<!-- 				</div> -->
 			</div>
-			<div class="col-lg-4 col-md-6 col-sm-12">
+			<div class="col-lg-4 col-md-4 col-sm-12">
 			</div>
 		</div>
 	</div>
