@@ -57,7 +57,7 @@
 			</c:if>
 			</div>
 			<div class="col-lg-4 col-md-6 col-sm-12">
-				<a href="${linkTo[RecipeController].novo()}">Registrar Receitas</a>
+				<a href="${linkTo[RecipeController].register()}">Registrar Receitas</a>
 <%-- 				<a href="${linkTo[ExpenseController].register()}">Registrar Despesas</a> --%>
 			</div>
 			<div class="col-lg-4 col-md-6 col-sm-12">

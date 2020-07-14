@@ -14,15 +14,6 @@ public class RecipeDao {
 
 	@Inject private EntityManager manager;
 	
-	public List<Recipe> list() {
-		try {
-			TypedQuery<Recipe> query = manager.createQuery("select r from RECIPE r", Recipe.class);
-			return query.getResultList();
-		} finally {
-			manager.close();
-		}
-	}
-	
 	public void add (Recipe recipe) {
 		try {
 			manager.getTransaction().begin();
@@ -58,4 +49,17 @@ public class RecipeDao {
 		return manager.find(Recipe.class, recipe.getId());
 	}
 	
+	public Recipe charge (int id) {
+		return (Recipe) this.manager.find(Recipe.class, id);
+	}
+	
+	public List<Recipe> list() {
+		try {
+			TypedQuery<Recipe> query = manager.createQuery("select r from RECIPE r", Recipe.class);
+			return query.getResultList();
+		} finally {
+			manager.close();
+		}
+	}
+
 }

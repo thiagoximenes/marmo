@@ -14,17 +14,8 @@ import br.com.ximenes.simpleproject.security.LoggedUser;
 @RequestScoped
 public class UserDao {
 
-	private EntityManager manager;
-	private LoggedUser loggedUser;
-
-	@Inject
-	public UserDao(EntityManager manager, LoggedUser loggedUser) {
-		this.manager = manager;
-		this.loggedUser = loggedUser;
-	}
-
-	public UserDao() {
-	}
+	@Inject private EntityManager manager;
+	@Inject private LoggedUser loggedUser;
 
 	public void add (User user) {
 		try {

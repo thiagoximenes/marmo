@@ -1,11 +1,16 @@
 package br.com.ximenes.simpleproject.controller;
 
+import java.util.List;
+
 import javax.inject.Inject;
 
 import br.com.caelum.vraptor.Controller;
 import br.com.caelum.vraptor.Get;
 import br.com.caelum.vraptor.Path;
 import br.com.caelum.vraptor.Post;
+import br.com.caelum.vraptor.Put;
+import br.com.caelum.vraptor.Result;
+import br.com.ximenes.simpleproject.dao.RecipeDao;
 import br.com.ximenes.simpleproject.model.Recipe;
 import br.com.ximenes.simpleproject.service.RecipeService;
 
@@ -13,29 +18,37 @@ import br.com.ximenes.simpleproject.service.RecipeService;
 public class RecipeController {
 	
 	@Inject private RecipeService recipeService;
+	@Inject private RecipeDao recipeDao;
+	@Inject private Result result;
 
-	@Get("/recipes")
-    public void index() {}
-
-	@Get("/recipes/novo")
-	public void novo() {}
+	@Path("/recipes/register")
+	public void register() {}
 
 	@Post("/recipes")
-	public void criar(Recipe recipe) {
-		recipeService.criar(recipe);
+	public void create(Recipe recipe) {
+		recipeService.add(recipe);
 	}
 	
-	@Post("/recipes/editar")
-	public void atualizar(Recipe recipe) {
-		recipeService.atualizar(recipe);
+	@Get("/recipes/{id}")
+	public Recipe edit(int id) {
+		return recipeDao.charge(id);
+	}
+	
+	@Put("/recipes/{id}/edit")
+	public void update(Recipe recipe) {
+		recipeService.change(recipe);
     }
 
-	@Get("/recipes/{recipe.id}/editar")
-	public void editar(Recipe recipe) {}
-
-	@Get("/recipes/{recipe.id}/apagar")
-	public void apagar(Recipe recipe) {
-		recipeService.apagar(recipe);
+	@Get("/recipes/{recipe.id}/remove")
+	public void delete(Recipe recipe) {
+		recipeService.remove(recipe);
     }
+	
+	@Path("/recipes/list")
+	public void list() {
+		List<Recipe> recipes = recipeDao.list();
+		result.include("recipes", recipes);
+	}
+
 	
 }

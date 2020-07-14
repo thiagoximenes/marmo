@@ -18,19 +18,9 @@ import br.com.ximenes.simpleproject.model.UserType;
 @Intercepts
 public class ProtectionInterceptor {
 
-	private LoggedUser loggedUser;
-	private Result result;
-	private ControllerMethod method;
-
-	public ProtectionInterceptor() {
-	}
-
-	@Inject
-	public ProtectionInterceptor(LoggedUser loggedUser, Result result, ControllerMethod method) {
-		this.loggedUser = loggedUser;
-		this.result = result;
-		this.method = method;
-	}
+	@Inject private LoggedUser loggedUser;
+	@Inject private Result result;
+	@Inject private ControllerMethod method;
 
 	@Accepts
 	public boolean accept() {

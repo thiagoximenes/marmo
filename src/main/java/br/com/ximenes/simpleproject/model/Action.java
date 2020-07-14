@@ -9,7 +9,6 @@ import javax.persistence.MappedSuperclass;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
-import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.validator.constraints.NotEmpty;
 
 @MappedSuperclass
@@ -24,12 +23,11 @@ public class Action implements Serializable {
 	@NotEmpty
 	private String name; 
 	
-	@CreationTimestamp
-	@Temporal(TemporalType.TIMESTAMP)
+	@Temporal(TemporalType.DATE)
 	private Date createDate;
 	
 	@NotEmpty
-	private double value;
+	private float value;
 
 	public long getId() {
 		return id;
@@ -55,11 +53,11 @@ public class Action implements Serializable {
 		this.createDate = createDate;
 	}
 
-	public double getValue() {
+	public float getValue() {
 		return value;
 	}
 
-	public void setValue(double value) {
+	public void setValue(float value) {
 		this.value = value;
 	}
 

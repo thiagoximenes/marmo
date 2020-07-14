@@ -23,6 +23,32 @@ public class UserController {
 	@Inject private Result result;
 	@Inject private UserService userService;
 
+	@Path("/users/register")
+	public void register() {
+		result.include("userType", UserType.values());
+	}
+
+	@Post("/users")
+	public void create(User user) {
+		userService.add(user);
+	}
+	
+	@Get("/users/{id}")
+	public User edit(int id) {
+		result.include("userType", UserType.values());
+		return userDao.charge(id);
+	}
+
+	@Put("/users/{id}/edit")
+	public void update(User user) {
+		userService.change(user);
+	}
+	
+	@Get("/users/{user.id}/remove")
+	public void delete(User user) {
+		userService.remove(user);
+	}
+	
 	@Protection(type = { UserType.ADMIN })
 	@Path("users/list")
 	public void list() {
@@ -44,38 +70,12 @@ public class UserController {
 		result.include("userType", UserType.values());
 		return userDao.charge(id);
 	}
-
-	@Protection(type = { UserType.ADMIN, UserType.NORMAL })
-	@Path("/users/register")
-	public void register() {
-		result.include("userType", UserType.values());
-	}
-
-	@Post("/users")
-	public void create(User user) {
-		userService.add(user);
-	}
-
-	@Put("/users/{id}/edit")
-	public void update(User user) {
-		userService.change(user);
-	}
 	
 	@Put("users/perfilupdate")
 	public void updatePerfil(User user) {
 		userService.changePerfil(user);
 	}
 	
-	@Get("/users/{user.id}/remove")
-	public void delete(User user) {
-		userService.remove(user);
-	}
-	
-	@Get("/users/{id}")
-	public User edit(int id) {
-		result.include("userType", UserType.values());
-		return userDao.charge(id);
-	}
 
 	@Get("/users/perfilupdate")
 	public User editPerfil(int id) {
