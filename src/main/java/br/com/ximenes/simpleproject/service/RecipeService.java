@@ -4,9 +4,7 @@ import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 
 import br.com.caelum.vraptor.Result;
-import br.com.caelum.vraptor.interceptor.IncludeParameters;
 import br.com.caelum.vraptor.validator.Validator;
-import br.com.ximenes.simpleproject.controller.IndexController;
 import br.com.ximenes.simpleproject.controller.RecipeController;
 import br.com.ximenes.simpleproject.dao.RecipeDao;
 import br.com.ximenes.simpleproject.model.Recipe;
@@ -20,21 +18,23 @@ public class RecipeService {
 	
 //	@IncludeParameters
 	public void add(Recipe recipe) {
-		validator.onErrorRedirectTo(IndexController.class).dashboard();
+		validator.onErrorRedirectTo(RecipeController.class).register();
 		recipeDao.add(recipe);
-		result.redirectTo(RecipeController.class).register();
+		result.include("msg", "Receita cadastrada.");
+		result.redirectTo(RecipeController.class).list();
 	}
 
 	public void change(Recipe recipe) {
 		validator.onErrorRedirectTo(RecipeController.class).register();
-		recipeDao.remove(recipe);
-		result.redirectTo(RecipeController.class).register();
+		recipeDao.update(recipe);
+		result.include("msg", "Receita atualizada.");
+		result.redirectTo(RecipeController.class).list();
 	}
 
 	public void remove(Recipe recipe) {
-		validator.onErrorRedirectTo(RecipeController.class).register();
-		recipeDao.update(recipe);
-		result.redirectTo(RecipeController.class).register();
+		recipeDao.remove(recipe);
+		result.include("msg", "Receita apagada.");
+		result.redirectTo(RecipeController.class).list();
 	}
 	
 }
