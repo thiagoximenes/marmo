@@ -59,21 +59,3 @@
 	
 </div>
 
-<%-- <c:forEach items="${errors.from('usuario.nome')}" var="error"> --%>
-<!-- 	<alert:validationMessage name="usuario.nome" /> -->
-<%-- </c:forEach> --%>
-<%-- <c:forEach items="${errors.from('usuario.sobrenome')}" var="error"> --%>
-<!-- 	<alert:validationMessage name="usuario.sobrenome" /> -->
-<%-- </c:forEach> --%>
-<%-- <c:forEach items="${errors.from('usuario.email')}" var="error"> --%>
-<!-- 	<alert:validationMessage name="usuario.email" /> -->
-<%-- </c:forEach> --%>
-<%-- <c:forEach items="${errors.from('usuario.login')}" var="error"> --%>
-<!-- 	<alert:validationMessage name="usuario.login" /> -->
-<%-- </c:forEach> --%>
-<%-- <c:forEach items="${errors.from('usuario.senha')}" var="error"> --%>
-<!-- 	<alert:validationMessage name="usuario.senha" /> -->
-<%-- </c:forEach> --%>
-<%-- <c:forEach items="${errors.from('usuario.tipo')}" var="error"> --%>
-<!-- 	<alert:validationMessage name="usuario.tipo" /> -->
-<%-- </c:forEach> --%>

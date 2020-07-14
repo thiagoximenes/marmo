@@ -1,32 +1,24 @@
 package br.com.ximenes.simpleproject.model;
 
 import java.io.Serializable;
-import java.util.Date;
 
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.MappedSuperclass;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
-
-import org.hibernate.validator.constraints.NotEmpty;
 
 @MappedSuperclass
 public class Action implements Serializable {
 
-	private static final long serialVersionUID = -5334628606139169714L;
+	private static final long serialVersionUID = 1L;
 
 	@Id
 	@GeneratedValue
 	private long id;
 	
-	@NotEmpty
-	private String name; 
+	private String name;
 	
-	@Temporal(TemporalType.DATE)
-	private Date createDate;
+	private String createDate;
 	
-	@NotEmpty
 	private float value;
 
 	public long getId() {
@@ -45,11 +37,11 @@ public class Action implements Serializable {
 		this.name = name;
 	}
 
-	public Date getCreateDate() {
+	public String getCreateDate() {
 		return createDate;
 	}
 
-	public void setCreateDate(Date createDate) {
+	public void setCreateDate(String createDate) {
 		this.createDate = createDate;
 	}
 
@@ -61,8 +53,4 @@ public class Action implements Serializable {
 		this.value = value;
 	}
 
-	public static long getSerialversionuid() {
-		return serialVersionUID;
-	}
-	
 }

@@ -5,6 +5,7 @@
 	version="2.0">
 	<persistence-unit name="default">
 		<provider>org.hibernate.ejb.HibernatePersistence</provider>
+		<class>br.com.ximenes.simpleproject.model.Recipe</class>
 
 		<properties>
 			<property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver" />

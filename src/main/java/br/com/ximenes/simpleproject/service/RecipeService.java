@@ -6,6 +6,7 @@ import javax.inject.Inject;
 import br.com.caelum.vraptor.Result;
 import br.com.caelum.vraptor.interceptor.IncludeParameters;
 import br.com.caelum.vraptor.validator.Validator;
+import br.com.ximenes.simpleproject.controller.IndexController;
 import br.com.ximenes.simpleproject.controller.RecipeController;
 import br.com.ximenes.simpleproject.dao.RecipeDao;
 import br.com.ximenes.simpleproject.model.Recipe;
@@ -17,9 +18,9 @@ public class RecipeService {
 	@Inject private Validator validator;
 	@Inject private Result result;
 	
-	@IncludeParameters
+//	@IncludeParameters
 	public void add(Recipe recipe) {
-		validator.onErrorRedirectTo(RecipeController.class).register();
+		validator.onErrorRedirectTo(IndexController.class).dashboard();
 		recipeDao.add(recipe);
 		result.redirectTo(RecipeController.class).register();
 	}

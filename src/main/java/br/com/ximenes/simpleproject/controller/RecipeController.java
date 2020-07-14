@@ -17,9 +17,9 @@ import br.com.ximenes.simpleproject.service.RecipeService;
 @Controller
 public class RecipeController {
 	
-	@Inject private RecipeService recipeService;
 	@Inject private RecipeDao recipeDao;
 	@Inject private Result result;
+	@Inject private RecipeService recipeService;
 
 	@Path("/recipes/register")
 	public void register() {}
