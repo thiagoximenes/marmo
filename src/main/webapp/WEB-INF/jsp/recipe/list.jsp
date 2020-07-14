@@ -61,9 +61,8 @@
 						<td id="createDate">${recipe.createDate}</td>
 						<td id="value">${recipe.value}</td>
 						<td class="tdedita">
-							<a href="<c:url value='/recipes/${recipe.id}'/>" data-toggle="tooltip" data-placement="bottom" title="Editar"> <i class="far fa-edit"></i></a>
+							<a href="<c:url value='/recipes/${recipe.id}'/>" data-toggle="tooltip" data-placement="bottom" title="Edit item"> <i class="far fa-edit"></i></a>
 							<a class="deletarProduto" href="javascript:void(0);" data-href="<c:url value='/recipes/${recipe.id}/remove'/>"><i class="far fa-trash-alt"></i></a>
-							<a href="<c:url value='/recipes/${recipe.id}/view'/>"><i class="far fa-eye"></i></a>
 						</td>
 					</tr>
 				</c:forEach>

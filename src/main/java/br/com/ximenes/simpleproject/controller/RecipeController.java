@@ -30,7 +30,7 @@ public class RecipeController {
 	}
 	
 	@Get("/recipes/{id}")
-	public Recipe edit(int id) {
+	public Recipe edit(Long id) {
 		return recipeDao.charge(id);
 	}
 	

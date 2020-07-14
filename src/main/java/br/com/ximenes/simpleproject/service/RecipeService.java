@@ -2,6 +2,7 @@ package br.com.ximenes.simpleproject.service;
 
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
+import javax.validation.Valid;
 
 import br.com.caelum.vraptor.Result;
 import br.com.caelum.vraptor.validator.Validator;
@@ -24,7 +25,7 @@ public class RecipeService {
 		result.redirectTo(RecipeController.class).list();
 	}
 
-	public void change(Recipe recipe) {
+	public void change(@Valid Recipe recipe) {
 		validator.onErrorRedirectTo(RecipeController.class).register();
 		recipeDao.update(recipe);
 		result.include("msg", "Receita atualizada.");

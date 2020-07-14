@@ -49,7 +49,7 @@ public class RecipeDao {
 		return manager.find(Recipe.class, recipe.getId());
 	}
 	
-	public Recipe charge (int id) {
+	public Recipe charge (Long id) {
 		return (Recipe) this.manager.find(Recipe.class, id);
 	}
 	
