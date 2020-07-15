@@ -5,6 +5,10 @@ import javax.persistence.Entity;
 @Entity(name = "EXPENSE")
 public class Expense extends Action{
 
-	private static final long serialVersionUID = -6869534901621149149L;
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 
 }

@@ -56,8 +56,8 @@
 			</div>
 			<div class="col-lg-4 col-md-6 col-sm-12" style="border-right: 1px solid #dcdcdc;">
 				<div class="col-12 mb-3">
-					<form class="form-style form-basic" action="/marmo/recipesonlist" method="post">
-						<c:import url="../recipe/form.jsp"></c:import>
+					<form class="form-style form-basic" action="/marmo/expensesonlist" method="post">
+						<c:import url="../expense/form.jsp"></c:import>
 						<input type="submit" class="btn btn-primary" value="Registrar" />
 					</form>
 				</div>
@@ -71,11 +71,11 @@
 							</tr>
 						</thead>
 						<tbody>
-							<c:forEach items="${recipes}" var="recipe">
+							<c:forEach items="${expenses}" var="expense">
 								<tr class="tr-item" role="row">
-									<td id="name"> ${recipe.name}</td>
-									<td id="createDate">${recipe.createDate}</td>
-									<td id="value">${recipe.value}</td>
+									<td id="name"> ${expense.name}</td>
+									<td id="createDate">${expense.createDate}</td>
+									<td id="value">${expense.value}</td>
 								</tr>
 							</c:forEach>
 						</tbody>

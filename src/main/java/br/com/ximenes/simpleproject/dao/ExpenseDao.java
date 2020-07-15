@@ -7,55 +7,55 @@ import javax.inject.Inject;
 import javax.persistence.EntityManager;
 import javax.persistence.TypedQuery;
 
-import br.com.ximenes.simpleproject.model.Recipe;
+import br.com.ximenes.simpleproject.model.Expense;
 
 @RequestScoped
-public class RecipeDao {
+public class ExpenseDao {
 
 	@Inject private EntityManager manager;
 	
-	public void add (Recipe recipe) {
+	public void add (Expense expense) {
 		try {
 			manager.getTransaction().begin();
-			manager.persist(recipe);
+			manager.persist(expense);
 			manager.getTransaction().commit();
 		} catch (Exception e) {
 			manager.close();
 		}
 	}
 
-	public void remove (Recipe recipe) {
+	public void remove (Expense expense) {
 		try {
 			manager.getTransaction().begin();
-			recipe = find(recipe);
-			manager.remove(recipe);
+			expense = find(expense);
+			manager.remove(expense);
 			manager.getTransaction().commit();
 		} catch (Exception e) {
 			manager.close();
 		}
 	}
 
-	public void update (Recipe recipe) {
+	public void update (Expense expense) {
 			try {
 				manager.getTransaction().begin();
-				manager.merge(recipe);
+				manager.merge(expense);
 				manager.getTransaction().commit();
 			} catch (Exception e) {
 				manager.close();
 			}
 	}
 	
-	public Recipe find (Recipe recipe) {
-		return manager.find(Recipe.class, recipe.getId());
+	public Expense find (Expense expense) {
+		return manager.find(Expense.class, expense.getId());
 	}
 	
-	public Recipe charge (Long id) {
-		return (Recipe) this.manager.find(Recipe.class, id);
+	public Expense charge (Long id) {
+		return (Expense) this.manager.find(Expense.class, id);
 	}
 	
-	public List<Recipe> list() {
-		TypedQuery<Recipe> query = manager.createQuery("select u from RECIPE u", Recipe.class);
+	public List<Expense> list() {
+		TypedQuery<Expense> query = manager.createQuery("select u from EXPENSE u", Expense.class);
 		return query.getResultList();
 	}
-
+	
 }
