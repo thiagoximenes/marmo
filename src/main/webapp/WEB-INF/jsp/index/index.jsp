@@ -25,11 +25,7 @@
 		<div class="row align-items-end">
 			<div class="col">
 				<p>This INDEX.JSP are visible for anyone.</p>
-				<h1>${data}</h1><br/>
-				<h1>${data2}</h1><br/>
-				<h1>${data3}</h1><br/>
-				<h1>${data4}</h1><br/>
-				<h1>${data5}</h1>
+				<h1>${date}</h1><br/>
 				<header>
 					<h2>Header</h2>
 					<p>Lorem ipsum is placeholder text commonly used in the graphic,

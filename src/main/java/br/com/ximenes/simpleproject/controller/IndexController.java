@@ -1,9 +1,5 @@
 package br.com.ximenes.simpleproject.controller;
 
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
-import java.util.Date;
 import java.util.List;
 
 import javax.inject.Inject;
@@ -13,17 +9,14 @@ import br.com.caelum.vraptor.Get;
 import br.com.caelum.vraptor.Path;
 import br.com.caelum.vraptor.Result;
 import br.com.ximenes.simpleproject.dao.RecipeDao;
-import br.com.ximenes.simpleproject.dao.UserDao;
 import br.com.ximenes.simpleproject.model.UserType;
 import br.com.ximenes.simpleproject.model.Recipe;
-import br.com.ximenes.simpleproject.model.User;
 import br.com.ximenes.simpleproject.security.Protection;
 
 @Controller
 public class IndexController {
 
 	@Inject private Result result;
-	@Inject private UserDao userDao;
 	@Inject private RecipeDao recipeDao;
 	
 	@Path("/")
@@ -44,13 +37,10 @@ public class IndexController {
 
 	}
 
-	@Get("/dashboard")
 	@Protection(type = { UserType.ADMIN, UserType.NORMAL })
+	@Get("/dashboard")
 	public void dashboard() {
 		List<Recipe> recipes = recipeDao.list();
 		result.include("recipes", recipes);
-		List<User> users = userDao.list();
-		result.include("userType", UserType.values());
-		result.include("users", users);
 	}
 }

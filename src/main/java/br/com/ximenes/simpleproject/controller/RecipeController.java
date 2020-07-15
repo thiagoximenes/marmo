@@ -28,6 +28,11 @@ public class RecipeController {
 	public void create(Recipe recipe) {
 		recipeService.add(recipe);
 	}
+
+	@Post("/recipesonlist")
+	public void createOnList(Recipe recipe) {
+		recipeService.addOnList(recipe);
+	}
 	
 	@Get("/recipes/{id}")
 	public Recipe edit(Long id) {

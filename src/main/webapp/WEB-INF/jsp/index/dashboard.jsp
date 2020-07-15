@@ -26,51 +26,63 @@
 <div class="container-fluid">
 	<div class="content">
 		<div class="row align-items-end">
-			<div class="col-lg-4 col-md-4 col-sm-12">
-<!-- 				<div class="table-responsive"> -->
-<!-- 					<table class="table table-hover"> -->
-<!-- 						<thead> -->
-<!-- 							<tr> -->
-<!-- 								<th scope="col">Receitas <i class="fas fa-sort"></i></th> -->
-<!-- 								<th scope="col">Data <i class="fas fa-sort"></i></th> -->
-<!-- 								<th scope="col">Valor <i class="fas fa-sort"></i></th> -->
-<!-- 							</tr> -->
-<!-- 						</thead> -->
-<!-- 						<tbody> -->
-<%-- 							<c:forEach items="${recipes}" var="recipe"> --%>
-<!-- 								<tr class="tr-item" role="row"> -->
-<%-- 									<td id="name"> ${recipe.name}</td> --%>
-<%-- 									<td id="createDate">${recipe.createDate}</td> --%>
-<%-- 									<td id="value">${recipe.value}</td> --%>
-<!-- 								</tr> -->
-<%-- 							</c:forEach> --%>
-<!-- 						</tbody> -->
-<!-- 					</table> -->
-<!-- 				</div> -->
+			<div class="col-lg-4 col-md-6 col-sm-12" style="border-right: 1px solid #dcdcdc;">
+				<div class="col-12 mb-3">
+					<form class="form-style form-basic" action="/marmo/recipesonlist" method="post">
+						<c:import url="../recipe/form.jsp"></c:import>
+						<input type="submit" class="btn btn-primary" value="Registrar" />
+					</form>
+				</div>
+				<div class="table-responsive">
+					<table class="table table-hover">
+						<thead>
+							<tr>
+								<th scope="col">Receitas <i class="fas fa-sort"></i></th>
+								<th scope="col">Data <i class="fas fa-sort"></i></th>
+								<th scope="col">Valor <i class="fas fa-sort"></i></th>
+							</tr>
+						</thead>
+						<tbody>
+							<c:forEach items="${recipes}" var="recipe">
+								<tr class="tr-item" role="row">
+									<td id="name"> ${recipe.name}</td>
+									<td id="createDate">${recipe.createDate}</td>
+									<td id="value">${recipe.value}</td>
+								</tr>
+							</c:forEach>
+						</tbody>
+					</table>
+				</div>
 			</div>
-			<div class="col-lg-4 col-md-4 col-sm-12">
-<!-- 				<div class="table-responsive"> -->
-<!-- 					<table class="table table-hover"> -->
-<!-- 						<thead> -->
-<!-- 							<tr> -->
-<!-- 								<th scope="col">Despesas <i class="fas fa-sort"></i></th> -->
-<!-- 								<th scope="col">Data <i class="fas fa-sort"></i></th> -->
-<!-- 								<th scope="col">Valor <i class="fas fa-sort"></i></th> -->
-<!-- 							</tr> -->
-<!-- 						</thead> -->
-<!-- 						<tbody> -->
-<%-- 							<c:forEach items="${recipes}" var="recipe"> --%>
-<!-- 								<tr class="tr-item" role="row"> -->
-<%-- 									<td id="name"> ${recipe.name}</td> --%>
-<%-- 									<td id="createDate">${recipe.createDate}</td> --%>
-<%-- 									<td id="value">${recipe.value}</td> --%>
-<!-- 								</tr> -->
-<%-- 							</c:forEach> --%>
-<!-- 						</tbody> -->
-<!-- 					</table> -->
-<!-- 				</div> -->
+			<div class="col-lg-4 col-md-6 col-sm-12" style="border-right: 1px solid #dcdcdc;">
+				<div class="col-12 mb-3">
+					<form class="form-style form-basic" action="/marmo/recipesonlist" method="post">
+						<c:import url="../recipe/form.jsp"></c:import>
+						<input type="submit" class="btn btn-primary" value="Registrar" />
+					</form>
+				</div>
+				<div class="table-responsive">
+					<table class="table table-hover">
+						<thead>
+							<tr>
+								<th scope="col">Despesas <i class="fas fa-sort"></i></th>
+								<th scope="col">Data <i class="fas fa-sort"></i></th>
+								<th scope="col">Valor <i class="fas fa-sort"></i></th>
+							</tr>
+						</thead>
+						<tbody>
+							<c:forEach items="${recipes}" var="recipe">
+								<tr class="tr-item" role="row">
+									<td id="name"> ${recipe.name}</td>
+									<td id="createDate">${recipe.createDate}</td>
+									<td id="value">${recipe.value}</td>
+								</tr>
+							</c:forEach>
+						</tbody>
+					</table>
+				</div>
 			</div>
-			<div class="col-lg-4 col-md-4 col-sm-12">
+			<div class="col-lg-4 col-md-6 col-sm-12">
 			</div>
 		</div>
 	</div>
