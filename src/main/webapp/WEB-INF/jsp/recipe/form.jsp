@@ -6,7 +6,7 @@
 <div class="row">
 	<div class="form-group col-sm">
 		<label for="createData">Data:</label>
-		<input type="date" name="recipe.createDate" id="createDate" class="form-control" value="${recipe.createDate}" required autofocus />
+		<input type="text" name="recipe.createDate" id="createDate" class="form-control custom-date" value="${recipe.createDate}" required autofocus />
 	</div>
 	<div class="form-group col-sm">
 		<label for="name">Nome:</label>

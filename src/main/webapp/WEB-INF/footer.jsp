@@ -7,12 +7,14 @@
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
 	<script src="<c:url value='/js/jquery.tablesorter.min.js'/>"></script>
+	<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
 	
 	<!-- Importing internal JavaScript files -->
 	<script src="<c:url value='/js/sweatalert-custom.js'/>"></script>
 	<script src="<c:url value='/js/loader.js'/>"></script>
 	<script src="<c:url value='/js/table.js'/>"></script>
 	<script src="<c:url value='/js/toast.js'/>"></script>
+	<script src="<c:url value='/js/form.js'/>"></script>
 	<%-- <script src="<c:url value='/js/passverify.js'/>"></script> --%>
 
 </body>
