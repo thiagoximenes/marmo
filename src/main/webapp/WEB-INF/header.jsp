@@ -6,12 +6,12 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Language" content="pt-br">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="author" content="Thiago Carneiro Ximenes" />
 <meta name="reply-to" content="thiagoximenesfhrc@gmail.com" />
 <meta name="description" content="<fmt:message key='meta.description'/>" />
-<meta name="keywords"
-	content="vraptor, desenvolvimento, development, java, hibernate" />
+<meta name="keywords" content="vraptor, desenvolvimento, development, java, hibernate" />
 
 <title>Marmo</title>
 
@@ -22,7 +22,8 @@
 <!-- CSS Local Import -->
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css" rel="stylesheet" />
 <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet" />
-<link href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css"rel="stylesheet" />
+<link href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css" rel="stylesheet" />
+<link href="https://npmcdn.com/flatpickr/dist/themes/airbnb.css" rel="stylesheet" type="text/css">
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
 <!-- CSS External Import -->
 <link href="<c:url value="/css/general.css"/>" rel="stylesheet" type="text/css" />

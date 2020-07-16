@@ -11,11 +11,11 @@
 						<ol class="breadcrumb">
 							<li class="breadcrumb-item"><a href="${linkTo[IndexController].dashboard() }">Dashboard</a></li>
 							<li class="breadcrumb-item" aria-current="page"><a href="${linkTo[ExpenseController].list() }">Receitas</a></li>
-							<li class="breadcrumb-item active" aria-current="page">Register</li>
+							<li class="breadcrumb-item active" aria-current="page">Editar</li>
 						</ol>
 					</nav>
 				</h6>
-				<h4>Editar receitas</h4>
+				<h4>Editar despesas</h4>
 			</div>
 		</div>
 	</div>

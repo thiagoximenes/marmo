@@ -1,4 +1,3 @@
-<%-- <%@ taglib tagdir="/WEB-INF/tags" prefix="ct"%> --%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
 <input type="hidden" name="recipe.id" value="${recipe.id }" />
@@ -6,7 +5,7 @@
 <div class="row">
 	<div class="form-group col-sm">
 		<label for="createData">Data:</label>
-		<input type="text" name="recipe.createDate" id="createDate" class="form-control custom-date" value="${recipe.createDate}" required autofocus />
+		<input type="text" name="recipe.createDate" id="createDate" class="form-control custom-date" value="${recipe.createDate}" required />
 	</div>
 	<div class="form-group col-sm">
 		<label for="name">Nome:</label>

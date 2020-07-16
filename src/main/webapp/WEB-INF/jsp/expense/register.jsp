@@ -15,7 +15,7 @@
 						</ol>
 					</nav>
 				</h6>
-				<h4>Receitas</h4>
+				<h4>Registrar despesa</h4>
 			</div>
 		</div>
 	</div>

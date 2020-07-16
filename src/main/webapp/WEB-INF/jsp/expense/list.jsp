@@ -13,11 +13,11 @@
 							<li class="breadcrumb-item"><a
 								href="${linkTo[IndexController].dashboard() }">Dashboard</a></li>
 <%-- 							<li class="breadcrumb-item" aria-current="page"><a href="${linkTo[ExpenseController].list() }">Receitas</a></li> --%>
-							<li class="breadcrumb-item active" aria-current="page">Register</li>
+							<li class="breadcrumb-item active" aria-current="page">Lista</li>
 						</ol>
 					</nav>
 				</h6>
-				<h4>Lista de receitas</h4>
+				<h4>Lista de despesas</h4>
 			</div>
 			
 			<div class="col-auto">
