@@ -25,7 +25,7 @@
 
 <div class="container-fluid">
 	<div class="content">
-		<div class="row align-items-end">
+		<div class="row">
 			<div class="col-lg-4 col-md-6 col-sm-12" style="border-right: 1px solid #dcdcdc;">
 				<div class="col-12 mb-3">
 					<form class="form-style form-basic" action="/marmo/recipesonlist" method="post">
