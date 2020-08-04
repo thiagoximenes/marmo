@@ -1,6 +1,9 @@
 package br.com.ximenes.simpleproject.service;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Date;
 
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
@@ -20,10 +23,20 @@ public class RecipeService {
 	@Inject private Validator validator;
 	@Inject private Result result;
 	
+	SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+	
 //	@IncludeParameters
 	public void add(Recipe recipe) {
 		validator.onErrorRedirectTo(RecipeController.class).register();
-		Recipe r = new Recipe(recipe.getId(), recipe.getName(), recipe.getCreateDate(), recipe.getValue(), recipe.getCreateDateAutomatic(), catchMonth());
+		
+		Recipe r;
+		if(recipe.getCreateDate() == null) {
+			Calendar cal = Calendar.getInstance();
+			recipe.setCreateDate(sdf.format(cal.getTime()));
+			r = new Recipe(recipe.getId(), recipe.getName(), recipe.getCreateDate() , recipe.getValue(), recipe.getCreateDateAutomatic(), catchMonth());
+		}else {
+			r = new Recipe(recipe.getId(), recipe.getName(), recipe.getCreateDate(), recipe.getValue(), recipe.getCreateDateAutomatic(), catchMonth());
+		}
 		recipeDao.add(r);
 		result.include("msg", "Receita cadastrada.");
 		result.redirectTo(RecipeController.class).list();
