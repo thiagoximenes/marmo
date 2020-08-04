@@ -8,8 +8,6 @@ import javax.inject.Inject;
 import javax.persistence.EntityManager;
 import javax.persistence.TypedQuery;
 
-import org.hibernate.criterion.Restrictions;
-
 import br.com.ximenes.simpleproject.model.Recipe;
 
 @RequestScoped

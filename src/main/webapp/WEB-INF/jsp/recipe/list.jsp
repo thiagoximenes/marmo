@@ -49,6 +49,7 @@
 					<th scope="col">ID <i class="fas fa-sort"></i></th>
 					<th scope="col">Nome <i class="fas fa-sort"></i></th>
 					<th scope="col">Data <i class="fas fa-sort"></i></th>
+					<th scope="col">Data 2 <i class="fas fa-sort"></i></th>
 					<th scope="col">Valor <i class="fas fa-sort"></i></th>
 					<th scope="col">Ações <i class="fas fa-sort"></i></th>
 				</tr>
@@ -59,6 +60,7 @@
 						<th> ${recipe.id}</th>
 						<td id="name"> ${recipe.name}</td>
 						<td id="createDate">${recipe.createDate}</td>
+						<td id="createDateAutomatic">${recipe.createDateAutomatic}</td>
 						<td id="value">${recipe.value}</td>
 						<td class="tdedita">
 							<a href="<c:url value='/recipes/${recipe.id}'/>" data-toggle="tooltip" data-placement="bottom" title="Edit item"> <i class="far fa-edit"></i></a>

@@ -32,7 +32,7 @@ public class Action implements Serializable {
 	private Date createDateAutomatic;
 	
 	private int month;
-
+	
 	public Action(Long id, String name, String createDate, BigDecimal value, Date createDateAutomatic, int month) {
 		this.id = id;
 		this.name = name;
@@ -44,15 +44,6 @@ public class Action implements Serializable {
 	
 	public Action() {}
 	
-//	Calendar cal = Calendar.getInstance();
-	
-//	public int catchMonth() {
-//		cal.setTime(this.getCreateDateAutomatic());
-//		int month = 1 + cal.get(Calendar.MONTH);
-//		return month;
-//	}
-
-
 	public Long getId() {
 		return id;
 	}
