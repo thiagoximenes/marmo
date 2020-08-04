@@ -30,6 +30,28 @@ public class Action implements Serializable {
 	@CreationTimestamp
 	@Temporal(TemporalType.DATE)
 	private Date createDateAutomatic;
+	
+	private int month;
+
+	public Action(Long id, String name, String createDate, BigDecimal value, Date createDateAutomatic, int month) {
+		this.id = id;
+		this.name = name;
+		this.createDate = createDate;
+		this.value = value;
+		this.createDateAutomatic = createDateAutomatic;
+		this.month = month;
+	}
+	
+	public Action() {}
+	
+//	Calendar cal = Calendar.getInstance();
+	
+//	public int catchMonth() {
+//		cal.setTime(this.getCreateDateAutomatic());
+//		int month = 1 + cal.get(Calendar.MONTH);
+//		return month;
+//	}
+
 
 	public Long getId() {
 		return id;
@@ -71,4 +93,12 @@ public class Action implements Serializable {
 		this.createDateAutomatic = createDateAutomatic;
 	}
 
+	public int getMonth() {
+		return month;
+	}
+
+	public void setMonth(int month) {
+		this.month = month;
+	}
+	
 }

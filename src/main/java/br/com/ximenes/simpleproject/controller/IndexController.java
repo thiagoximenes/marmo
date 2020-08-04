@@ -24,26 +24,12 @@ public class IndexController {
 	
 	@Path("/")
 	public void index() {
-//		Calendar c = Calendar.getInstance();
-//        c.set(2013, Calendar.FEBRUARY, 28);
-//        Date date = c.getTime();
-//        result.include("datanaoformatada", date);
-//        DateFormat formataData = DateFormat.getDateInstance();
-//		result.include("dataformatada", formataData.format(date));
-//         
-//		Calendar c = Calendar.getInstance();
-//		Date data = c.getTime();
-//        DateFormat f = DateFormat.getDateInstance(DateFormat.FULL);
-//        f = DateFormat.getDateInstance(DateFormat.SHORT);
-//        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
-//        result.include("data",sdf.format(data));
-
 	}
 
 	@Protection(type = { UserType.ADMIN, UserType.NORMAL })
 	@Get("/dashboard")
 	public void dashboard() {
-		List<Recipe> recipes = recipeDao.list();
+		List<Recipe> recipes = recipeDao.listByMonth();
 		List<Expense> expenses = expenseDao.list();
 		result.include("recipes", recipes);
 		result.include("expenses", expenses);

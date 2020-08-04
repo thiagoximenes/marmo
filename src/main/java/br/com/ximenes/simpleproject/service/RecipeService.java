@@ -1,5 +1,7 @@
 package br.com.ximenes.simpleproject.service;
 
+import java.util.Calendar;
+
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 import javax.validation.Valid;
@@ -21,16 +23,23 @@ public class RecipeService {
 //	@IncludeParameters
 	public void add(Recipe recipe) {
 		validator.onErrorRedirectTo(RecipeController.class).register();
-		recipeDao.add(recipe);
+		Recipe r = new Recipe(recipe.getId(), recipe.getName(), recipe.getCreateDate(), recipe.getValue(), recipe.getCreateDateAutomatic(), catchMonth());
+		recipeDao.add(r);
 		result.include("msg", "Receita cadastrada.");
 		result.redirectTo(RecipeController.class).list();
 	}
 	
 	public void addOnList(Recipe recipe) {
 		validator.onErrorRedirectTo(IndexController.class).dashboard();
-		recipeDao.add(recipe);
+		Recipe r = new Recipe(recipe.getId(), recipe.getName(), recipe.getCreateDate(), recipe.getValue(), recipe.getCreateDateAutomatic(), catchMonth());
+		recipeDao.add(r);
 		result.include("msg", "Receita cadastrada.");
 		result.redirectTo(IndexController.class).dashboard();
+	}
+
+	public int catchMonth() {
+		Calendar cal = Calendar.getInstance();
+		return cal.get(Calendar.MONTH) + 1;
 	}
 
 	public void change(@Valid Recipe recipe) {

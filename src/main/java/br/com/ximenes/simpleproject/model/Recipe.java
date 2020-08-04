@@ -1,10 +1,21 @@
 package br.com.ximenes.simpleproject.model;
 
+import java.io.Serializable;
+import java.math.BigDecimal;
+import java.util.Calendar;
+import java.util.Date;
+
 import javax.persistence.Entity;
 
 @Entity(name = "RECIPE")
-public class Recipe extends Action {
+public class Recipe extends Action implements Serializable {
 
 	private static final long serialVersionUID = 1L;
+	
+	public Recipe() {}
 
+	public Recipe(Long id, String name, String createDate, BigDecimal value, Date createDateAutomatic, int month) {
+		super(id, name, createDate, value, createDateAutomatic, month);
+	}
+	
 }
