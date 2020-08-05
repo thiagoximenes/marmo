@@ -1,5 +1,6 @@
 package br.com.ximenes.simpleproject.dao;
 
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.List;
 
@@ -14,6 +15,9 @@ import br.com.ximenes.simpleproject.model.Recipe;
 public class RecipeDao {
 
 	@Inject private EntityManager manager;
+	@Inject private Recipe recipe;
+	
+	SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
 	
 	public void add (Recipe recipe) {
 		try {
@@ -54,7 +58,7 @@ public class RecipeDao {
 		return (Recipe) this.manager.find(Recipe.class, id);
 	}
 	
-	public int catchMonth() {
+	public int catchMonth(Recipe recipe) {
 		Calendar cal = Calendar.getInstance();
 		return cal.get(Calendar.MONTH) + 1;
 	}	
@@ -64,9 +68,9 @@ public class RecipeDao {
 		return query.getResultList();
 	}	
 
-	public List<Recipe> listByMonth() {
+	public List<Recipe> listByMonth(){
 		TypedQuery<Recipe> query = manager.createQuery("SELECT r FROM RECIPE r WHERE r.month =:rActualMonth", Recipe.class);
-		query.setParameter("rActualMonth", catchMonth());
+		query.setParameter("rActualMonth", catchMonth(recipe));
 		return query.getResultList();
 	}	
 	

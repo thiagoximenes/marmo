@@ -16,5 +16,5 @@ public class Recipe extends Action implements Serializable {
 	public Recipe(Long id, String name, String createDate, BigDecimal value, Date createDateAutomatic, int month) {
 		super(id, name, createDate, value, createDateAutomatic, month);
 	}
-	
+
 }

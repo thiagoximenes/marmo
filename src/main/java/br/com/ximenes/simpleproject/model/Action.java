@@ -41,7 +41,7 @@ public class Action implements Serializable {
 		this.createDateAutomatic = createDateAutomatic;
 		this.month = month;
 	}
-	
+
 	public Action() {}
 	
 	public Long getId() {

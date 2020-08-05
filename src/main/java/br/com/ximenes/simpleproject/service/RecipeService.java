@@ -1,6 +1,6 @@
 package br.com.ximenes.simpleproject.service;
 
-import java.text.DateFormat;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
@@ -33,9 +33,9 @@ public class RecipeService {
 		if(recipe.getCreateDate() == null) {
 			Calendar cal = Calendar.getInstance();
 			recipe.setCreateDate(sdf.format(cal.getTime()));
-			r = new Recipe(recipe.getId(), recipe.getName(), recipe.getCreateDate() , recipe.getValue(), recipe.getCreateDateAutomatic(), catchMonth());
+			r = new Recipe(recipe.getId(), recipe.getName(), recipe.getCreateDate() , recipe.getValue(), recipe.getCreateDateAutomatic(), catchMonth(recipe));
 		}else {
-			r = new Recipe(recipe.getId(), recipe.getName(), recipe.getCreateDate(), recipe.getValue(), recipe.getCreateDateAutomatic(), catchMonth());
+			r = new Recipe(recipe.getId(), recipe.getName(), recipe.getCreateDate(), recipe.getValue(), recipe.getCreateDateAutomatic(), catchMonth(recipe));
 		}
 		recipeDao.add(r);
 		result.include("msg", "Receita cadastrada.");
@@ -44,19 +44,38 @@ public class RecipeService {
 	
 	public void addOnList(Recipe recipe) {
 		validator.onErrorRedirectTo(IndexController.class).dashboard();
-		Recipe r = new Recipe(recipe.getId(), recipe.getName(), recipe.getCreateDate(), recipe.getValue(), recipe.getCreateDateAutomatic(), catchMonth());
+		
+		Recipe r;
+		if(recipe.getCreateDate() == null) {
+			Calendar cal = Calendar.getInstance();
+			recipe.setCreateDate(sdf.format(cal.getTime()));
+			r = new Recipe(recipe.getId(), recipe.getName(), recipe.getCreateDate() , recipe.getValue(), recipe.getCreateDateAutomatic(), catchMonth(recipe));
+		}else {
+			r = new Recipe(recipe.getId(), recipe.getName(), recipe.getCreateDate(), recipe.getValue(), recipe.getCreateDateAutomatic(), catchMonth(recipe));
+		}
 		recipeDao.add(r);
 		result.include("msg", "Receita cadastrada.");
 		result.redirectTo(IndexController.class).dashboard();
 	}
 
-	public int catchMonth() {
+	public int catchMonth(Recipe recipe) {
 		Calendar cal = Calendar.getInstance();
-		return cal.get(Calendar.MONTH) + 1;
+		if (recipe.getCreateDate() != null) {
+			try {
+				Date date = new SimpleDateFormat("dd/MM/yyyy").parse(recipe.getCreateDate());
+				cal.setTime(date);
+			} catch (ParseException e) {
+				e.printStackTrace();
+			}
+			return cal.get(Calendar.MONTH) + 1;
+		} else {
+			return cal.get(Calendar.MONTH) + 1;
+		}
 	}
 
 	public void change(@Valid Recipe recipe) {
 		validator.onErrorRedirectTo(RecipeController.class).register();
+		recipe = new Recipe(recipe.getId(), recipe.getName(), recipe.getCreateDate(), recipe.getValue(), recipe.getCreateDateAutomatic(), catchMonth(recipe));
 		recipeDao.update(recipe);
 		result.include("msg", "Receita atualizada.");
 		result.redirectTo(RecipeController.class).list();

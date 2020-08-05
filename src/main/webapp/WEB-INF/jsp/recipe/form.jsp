@@ -2,10 +2,12 @@
 
 <input type="hidden" name="recipe.id" value="${recipe.id }" />
 
+<input type="hidden" name="recipe.createDateAutomatic" value="${recipe.createDateAutomatic}" />
+
 <div class="row">
 	<div class="form-group col-sm">
 		<label for="createData">Data:</label>
-<%-- 		<input type="text" name="recipe.createDate" id="createDate" class="form-control custom-date" value="${recipe.createDate}" disabled /> --%>
+		<input type="text" name="recipe.createDate" id="createDate" class="form-control custom-date" value="${recipe.createDate}" />
 	</div>
 	<div class="form-group col-sm">
 		<label for="name">Nome:</label>
