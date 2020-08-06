@@ -36,11 +36,14 @@ public class RecipeController {
 	
 	@Get("/recipes/{id}")
 	public Recipe edit(Long id) {
-		return recipeDao.charge(id);
+		Recipe r = recipeDao.charge(id);
+		r.getCreateDateAutomatic();
+		return r;
 	}
 	
 	@Put("/recipes/{id}/edit")
 	public void update(Recipe recipe) {
+		recipe.getCreateDateAutomatic();
 		recipeService.change(recipe);
     }
 

@@ -5,7 +5,7 @@
 <div class="row">
 	<div class="form-group col-sm">
 		<label for="createData">Data:</label>
-		<input type="date" name="expense.createDate" id="createDate" class="form-control custom-date" value="${expense.createDate}" required />
+		<input type="date" name="expense.createDate" id="createDate" class="form-control custom-date" value="${expense.createDate}" />
 	</div>
 	<div class="form-group col-sm">
 		<label for="name">Nome:</label>
