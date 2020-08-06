@@ -75,6 +75,12 @@ public class RecipeService {
 
 	public void change(@Valid Recipe recipe) {
 		validator.onErrorRedirectTo(RecipeController.class).register();
+		
+		if(recipe.getCreateDateAutomatic() == null) {
+			Calendar cal = Calendar.getInstance();
+			recipe.setCreateDateAutomatic(cal.getTime());
+		}
+		
 		recipe = new Recipe(recipe.getId(), recipe.getName(), recipe.getCreateDate(), recipe.getValue(), recipe.getCreateDateAutomatic(), catchMonth(recipe));
 		recipeDao.update(recipe);
 		result.include("msg", "Receita atualizada.");
