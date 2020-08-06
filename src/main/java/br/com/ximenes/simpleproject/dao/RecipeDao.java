@@ -1,5 +1,6 @@
 package br.com.ximenes.simpleproject.dao;
 
+import java.math.BigDecimal;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.List;
@@ -73,5 +74,19 @@ public class RecipeDao {
 		query.setParameter("rActualMonth", catchMonth(recipe));
 		return query.getResultList();
 	}	
+	
+	public BigDecimal totalRecipeByMonth() {
+		BigDecimal sum = new BigDecimal("0.000");
+		
+		TypedQuery<Recipe> query = manager.createQuery("SELECT r FROM RECIPE r WHERE r.month =:rActualMonth", Recipe.class);
+		query.setParameter("rActualMonth", catchMonth(recipe));
+		List<Recipe> all = query.getResultList();
+		
+		for(Recipe r : all) {
+			sum = sum.add(r.getValue());
+		}
+		
+		return sum;
+	}
 	
 }

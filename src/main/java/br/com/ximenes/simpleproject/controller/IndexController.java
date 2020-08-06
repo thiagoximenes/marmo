@@ -33,5 +33,6 @@ public class IndexController {
 		List<Expense> expenses = expenseDao.list();
 		result.include("recipes", recipes);
 		result.include("expenses", expenses);
+		result.include("totalRecipeByMonth", recipeDao.totalRecipeByMonth());
 	}
 }

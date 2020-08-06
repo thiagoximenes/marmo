@@ -7,6 +7,7 @@ import java.util.Date;
 
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
+import javax.persistence.criteria.CriteriaBuilder.Case;
 import javax.validation.Valid;
 
 import br.com.caelum.vraptor.Result;
@@ -91,6 +92,55 @@ public class RecipeService {
 		recipeDao.remove(recipe);
 		result.include("msg", "Receita apagada.");
 		result.redirectTo(RecipeController.class).list();
+	}
+	
+	public String monthToString(int month) {
+		String str = "";
+		
+		switch (month) {
+		case 1:
+			str = "Janeiro";
+			break;
+		case 2:
+			str = "Fevereiro";
+			break;
+		case 3:
+			str = "Março";
+			break;
+		case 4:
+			str = "Abril";
+			break;
+		case 5:
+			str = "Maio";
+			break;
+		case 6:
+			str = "Junho";
+			break;
+		case 7:
+			str = "Julho";
+			break;
+		case 8:
+			str = "Agosto";
+			break;
+		case 9:
+			str = "Setembro";
+			break;
+		case 10:
+			str = "Outubro";
+			break;
+		case 11:
+			str = "Novembro";
+			break;
+		case 12:
+			str = "Dezembro";
+			break;
+
+		default:
+			str = "Mês não encontrado.";
+			break;
+		}
+		
+		return str;
 	}
 	
 }

@@ -83,6 +83,13 @@
 				</div>
 			</div>
 			<div class="col-lg-4 col-md-6 col-sm-12">
+				<div class="col-12 mb-3">
+					<h3>Estatísticas</h3>
+						<p>Total de Receitas: 
+						<c:if test="${totalRecipeByMonth < 1}">Nenhuma receita cadastrada</c:if>
+						<c:if test="${totalRecipeByMonth > 0}">${totalRecipeByMonth}</p></c:if>
+						
+				</div>
 			</div>
 		</div>
 	</div>
