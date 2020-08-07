@@ -36,11 +36,14 @@ public class ExpenseController {
 	
 	@Get("/expenses/{id}")
 	public Expense edit(Long id) {
-		return expenseDao.charge(id);
+		Expense e = expenseDao.charge(id);
+		e.getCreateDateAutomatic();
+		return e;
 	}
 	
 	@Put("/expenses/{id}/edit")
 	public void update(Expense expense) {
+		expense.getCreateDateAutomatic();
 		expenseService.change(expense);
     }
 

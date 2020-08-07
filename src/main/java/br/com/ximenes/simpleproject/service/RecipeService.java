@@ -7,7 +7,6 @@ import java.util.Date;
 
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
-import javax.persistence.criteria.CriteriaBuilder.Case;
 import javax.validation.Valid;
 
 import br.com.caelum.vraptor.Result;
@@ -26,7 +25,6 @@ public class RecipeService {
 	
 	SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
 	
-//	@IncludeParameters
 	public void add(Recipe recipe) {
 		validator.onErrorRedirectTo(RecipeController.class).register();
 		

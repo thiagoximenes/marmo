@@ -1,7 +1,6 @@
 package br.com.ximenes.simpleproject.dao;
 
 import java.math.BigDecimal;
-import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.List;
 
@@ -17,8 +16,6 @@ public class RecipeDao {
 
 	@Inject private EntityManager manager;
 	@Inject private Recipe recipe;
-	
-	SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
 	
 	public void add (Recipe recipe) {
 		try {

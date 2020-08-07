@@ -2,6 +2,8 @@
 
 <input type="hidden" name="expense.id" value="${expense.id }" />
 
+<input type="hidden" name="expense.createDateAutomatic" value="${expense.createDateAutomatic}" />
+
 <div class="row">
 	<div class="form-group col-sm">
 		<label for="createData">Data:</label>
