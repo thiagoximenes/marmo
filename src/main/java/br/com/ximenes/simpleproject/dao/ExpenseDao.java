@@ -68,7 +68,7 @@ public class ExpenseDao {
 	
 	public List<Expense> listByMonth(){
 		TypedQuery<Expense> query = manager.createQuery("SELECT e FROM EXPENSE e WHERE e.month =:eActualMonth", Expense.class);
-		query.setParameter("rActualMonth", catchMonth(expense));
+		query.setParameter("eActualMonth", catchMonth(expense));
 		return query.getResultList();
 	}	
 	
@@ -76,7 +76,7 @@ public class ExpenseDao {
 		BigDecimal sum = new BigDecimal("0.000");
 		
 		TypedQuery<Expense> query = manager.createQuery("SELECT e FROM EXPENSE e WHERE e.month =:eActualMonth", Expense.class);
-		query.setParameter("rActualMonth", catchMonth(expense));
+		query.setParameter("eActualMonth", catchMonth(expense));
 		List<Expense> all = query.getResultList();
 		
 		for(Expense r : all) {
