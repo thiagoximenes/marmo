@@ -57,6 +57,5 @@ public class RecipeController {
 		List<Recipe> recipes = recipeDao.list();
 		result.include("recipes", recipes);
 	}
-
 	
 }

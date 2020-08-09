@@ -79,8 +79,8 @@ public class ExpenseDao {
 		query.setParameter("eActualMonth", catchMonth(expense));
 		List<Expense> all = query.getResultList();
 		
-		for(Expense r : all) {
-			sum = sum.add(r.getValue());
+		for(Expense e : all) {
+			sum = sum.add(e.getValue());
 		}
 		
 		return sum;

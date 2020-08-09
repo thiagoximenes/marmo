@@ -39,6 +39,7 @@
 							</tr>
 						</thead>
 						<tbody>
+							<c:if test="${noRecipeRegisters != null}"><tr class="tr-item" role="row"><td>${noRecipeRegisters}</td></tr></c:if>
 							<c:forEach items="${recipes}" var="recipe">
 								<tr class="tr-item" role="row">
 									<td id="name"> ${recipe.name}</td>
@@ -67,6 +68,7 @@
 							</tr>
 						</thead>
 						<tbody>
+							<c:if test="${noExpenseRegisters != null}"><tr class="tr-item" role="row"><td>${noExpenseRegisters}</td></tr></c:if>
 							<c:forEach items="${expenses}" var="expense">
 								<tr class="tr-item" role="row">
 									<td id="name"> ${expense.name}</td>
