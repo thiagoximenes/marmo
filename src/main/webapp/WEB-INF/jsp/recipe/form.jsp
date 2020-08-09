@@ -6,16 +6,16 @@
 
 <div class="row">
 	<div class="form-group col-sm">
-		<label for="createData">Data:</label>
-		<input type="text" name="recipe.createDate" id="createDate" class="form-control custom-date" value="${recipe.createDate}" />
+		<label for="rcreateData">Data:</label>
+		<input type="text" name="recipe.createDate" id="rcreateDate" class="form-control custom-date" value="${recipe.createDate}" />
 	</div>
 	<div class="form-group col-sm">
-		<label for="name">Nome:</label>
-		<input type="text" name="recipe.name" id="name" class="form-control" value="${recipe.name}" placeholder="Descrição breve" required />
+		<label for="rname">Nome:</label>
+		<input type="text" name="recipe.name" id="rname" class="form-control" value="${recipe.name}" placeholder="Descrição breve" required />
 	</div>
 	<div class="form-group col-sm">
-		<label for="value">Valor:</label>
-		<input type="text" name="recipe.value" id="value" class="form-control" value="${recipe.value}" placeholder="Valor" required />
+		<label for="rvalue">Valor:</label>
+		<input type="text" name="recipe.value" id="rvalue" class="form-control" value="${recipe.value}" placeholder="Valor" required />
 	</div>
 </div>
 	
