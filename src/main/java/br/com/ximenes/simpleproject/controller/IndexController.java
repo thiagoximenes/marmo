@@ -36,6 +36,9 @@ public class IndexController {
 		result.include("recipes", recipes);
 		result.include("expenses", expenses);
 		result.include("actualMonth", indexService.getMonth(recipes.get(1).getMonth()));
+		System.out.println("POIU" + recipes.get(0).getName());
+		System.out.println("POIU" + recipes.get(1).getName());
+		System.out.println("POIU" + recipes.get(2).getCreateDate());
 		result.include("totalRecipeByMonth", recipeDao.totalRecipeByMonth());
 		result.include("totalExpenseByMonth", expenseDao.totalExpenseByMonth());
 	}

@@ -13,7 +13,7 @@
 							<li class="breadcrumb-item"><a
 								href="${linkTo[IndexController].dashboard() }">Dashboard</a></li>
 <%-- 							<li class="breadcrumb-item" aria-current="page"><a href="${linkTo[RecipeController].list() }">Receitas</a></li> --%>
-							<li class="breadcrumb-item active" aria-current="page">Lista</li>
+							<li class="breadcrumb-item active" aria-current="page">Receitas</li>
 						</ol>
 					</nav>
 				</h6>

@@ -73,7 +73,7 @@ public class RecipeDao {
 	}	
 	
 	public BigDecimal totalRecipeByMonth() {
-		BigDecimal sum = new BigDecimal("0.000");
+		BigDecimal sum = new BigDecimal("0.00");
 		
 		TypedQuery<Recipe> query = manager.createQuery("SELECT r FROM RECIPE r WHERE r.month =:rActualMonth", Recipe.class);
 		query.setParameter("rActualMonth", catchMonth(recipe));

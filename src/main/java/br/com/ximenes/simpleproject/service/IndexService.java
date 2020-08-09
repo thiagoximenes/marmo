@@ -1,9 +1,46 @@
 package br.com.ximenes.simpleproject.service;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+
 import javax.enterprise.context.RequestScoped;
+
 
 @RequestScoped
 public class IndexService {
+	
+	public String actualDate(String recipeDate) {
+		
+		int dia = 0;
+		int month = 0;
+		int year = 0;
+		
+		
+		
+			Calendar cal = Calendar.getInstance();
+			if (recipeDate != null) {
+				try {
+					Date date = new SimpleDateFormat("dd/MM/yyyy").parse(recipeDate);
+					cal.setTime(date);
+				} catch (ParseException e) {
+					e.printStackTrace();
+				}
+				month = cal.get(Calendar.MONTH) + 1;
+			} else {
+				month = cal.get(Calendar.MONTH) + 1;
+			}
+		
+		
+		
+		
+		
+		
+		
+		return recipeDate;
+	}
+	
 	
 	public String getMonth(int i) {
 		String month = "";

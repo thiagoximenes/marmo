@@ -29,15 +29,18 @@
 				<li class="nav-item">
 					<a class="nav-link" href="${linkTo[IndexController].dashboard() }">Dashboard <span class="sr-only">(current)</span></a>
 				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="${linkTo[RecipeController].list()}">Receitas</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="${linkTo[ExpenseController].list()}">Despesas</a>
+				</li>
 			</c:if>
 			<c:if test="${loggedUser.user.type == 'ADMIN'}">
 				<li class="nav-item">
 					<a class="nav-link" href="${linkTo[UserController].list()}">Usuários</a>
 				</li>
 			</c:if>
-			<li class="nav-item">
-				<a class="nav-link" href="${linkTo[RecipeController].list()}">Receitas</a>
-			</li>
 			<c:if test="${loggedUser.user.type != null}">
 				<li class="nav-item dropdown">
 					<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -47,8 +50,8 @@
 						<span style="text-transform: uppercase;">${loggedUser.user.name}</span>
 					</a>
 					<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-						<a class="dropdown-item" href="${linkTo[UserController].perfil()}">My perfil</a>
-						<a class="dropdown-item" href="${linkTo[LoginController].logout()}">Exit</a>
+						<a class="dropdown-item" href="${linkTo[UserController].perfil()}">Meu perfil</a>
+						<a class="dropdown-item" href="${linkTo[LoginController].logout()}">Sair</a>
 					</div>
 				</li>
 			</c:if>

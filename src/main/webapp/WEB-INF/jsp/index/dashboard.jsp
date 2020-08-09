@@ -5,19 +5,15 @@
 
 <div class="container-fluid">
 	<div class="header">
-		<div class="row align-items-end mb-3">
+		<div class="row align-items-end">
 			<div class="col">
 				<h6>
 					<nav aria-label="breadcrumb">
 						<ol class="breadcrumb">
-							<li class="breadcrumb-item"><a
-								href="${linkTo[IndexController].index() }">Simple Project</a></li>
 							<li class="breadcrumb-item active" aria-current="page">Dashboard</li>
 						</ol>
 					</nav>
 				</h6>
-				<h4>Welcome to dashboard!</h4>
-				<p>This .JSP are visible only for <b>logged users</b>, like you.</p>
 			</div>
 		</div>
 	</div>

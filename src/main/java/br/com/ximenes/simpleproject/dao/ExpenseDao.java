@@ -73,7 +73,7 @@ public class ExpenseDao {
 	}	
 	
 	public BigDecimal totalExpenseByMonth() {
-		BigDecimal sum = new BigDecimal("0.000");
+		BigDecimal sum = new BigDecimal("0.00");
 		
 		TypedQuery<Expense> query = manager.createQuery("SELECT e FROM EXPENSE e WHERE e.month =:eActualMonth", Expense.class);
 		query.setParameter("eActualMonth", catchMonth(expense));
