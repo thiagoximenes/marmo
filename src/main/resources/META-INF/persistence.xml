@@ -35,7 +35,7 @@
 		<property name="show_sql" value="true" />
 		<property name="format_sql" value="false" />		
 
-		<property name="hibernate.current_session_context_class" value="thread" />
+<!-- 		<property name="hibernate.current_session_context_class" value="thread" /> -->
 
 <!-- 		<property name="hibernate.connection.provider_class">org.hibernate.c3p0.internal.C3P0ConnectionProvider</property> -->
 <!-- 		<property name="hibernate.c3p0.min_size">1</property> -->
