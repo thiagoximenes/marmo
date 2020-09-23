@@ -25,7 +25,7 @@
 			
 			<!-- heroku -->
 
-		<property name="hibernate.connection.url" value="ec2-3-218-112-22.compute-1.amazonaws.com:5432/d7dkhifut4v51u"/>
+		<property name="hibernate.connection.url" value="jdbc:postgresql://ec2-3-218-112-22.compute-1.amazonaws.com:5432/d7dkhifut4v51u"/>
 		<property name="hibernate.connection.username" value="smruhjntytwvcb" />
 		<property name="hibernate.connection.password" value="221f0ef4d0970d0b844ae62809f762ded476f768774a5d81ce58dd3e2557ccee" />
 
