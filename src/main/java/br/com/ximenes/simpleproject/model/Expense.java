@@ -12,8 +12,8 @@ public class Expense extends Action{
 	
 	public Expense() {}
 
-	public Expense(Long id, String name, String createDate, BigDecimal value, Date createDateAutomatic, int month) {
-		super(id, name, createDate, value, createDateAutomatic, month);
+	public Expense(Long id, String name, String description, String createDate, BigDecimal value, Date createDateAutomatic, int month) {
+		super(id, name, description, createDate, value, createDateAutomatic, month);
 	}
 
 }

@@ -18,4 +18,10 @@
 		<input type="text" name="expense.value" id="evalue" class="form-control" value="${expense.value}" placeholder="Valor" required />
 	</div>
 </div>
+<div class="row">
+	<div class="form-group col-sm">
+		<label for="edescription">Descrição (opcional):</label>
+		<textarea type="text" name="expense.description" id="edescription" class="form-control" value="${expense.description}" placeholder="Descreva essa movimentação"></textarea>
+	</div>
+</div>
 	

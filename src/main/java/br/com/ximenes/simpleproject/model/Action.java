@@ -23,6 +23,8 @@ public class Action implements Serializable {
 	
 	private String name;
 	
+	private String description;
+
 	private String createDate;
 	
 	private BigDecimal value;
@@ -33,9 +35,10 @@ public class Action implements Serializable {
 	
 	private int month;
 	
-	public Action(Long id, String name, String createDate, BigDecimal value, Date createDateAutomatic, int month) {
+	public Action(Long id, String name, String description, String createDate, BigDecimal value, Date createDateAutomatic, int month) {
 		this.id = id;
 		this.name = name;
+		this.description = description;
 		this.createDate = createDate;
 		this.value = value;
 		this.createDateAutomatic = createDateAutomatic;
@@ -58,6 +61,14 @@ public class Action implements Serializable {
 
 	public void setName(String name) {
 		this.name = name;
+	}
+
+	public String getDescription() {
+		return description;
+	}
+	
+	public void setDescription(String description) {
+		this.description = description;
 	}
 
 	public String getCreateDate() {

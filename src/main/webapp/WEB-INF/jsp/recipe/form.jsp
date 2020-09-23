@@ -18,4 +18,10 @@
 		<input type="text" name="recipe.value" id="rvalue" class="form-control" value="${recipe.value}" placeholder="Valor" required />
 	</div>
 </div>
+<div class="row">
+	<div class="form-group col-sm">
+		<label for="rdescription">Descrição (opcional):</label>
+		<textarea type="text" name="recipe.description" id="rdescription" class="form-control" value="${recipe.description}" placeholder="Descreva essa movimentação"></textarea>
+	</div>
+</div>
 	

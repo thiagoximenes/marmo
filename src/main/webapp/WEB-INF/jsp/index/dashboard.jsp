@@ -82,15 +82,17 @@
 			</div>
 			<div class="col-lg-4 col-md-6 col-sm-12">
 				<div class="col-12 mb-3">
-					<h3>Estatísticas (${actualMonth})</h3>
-					<p>Total de Receitas: 
-						<c:if test='${totalRecipeByMonth < 1}'>Nenhuma receita registrada</c:if>
-						<c:if test='${totalRecipeByMonth > 0}'>${totalRecipeByMonth}</c:if>
-					</p>
-					<p>Total de Despesas: 
-						<c:if test='${totalExpenseByMonth < 1}'>Nenhuma despesa registrada</c:if>
-						<c:if test='${totalExpenseByMonth > 0}'>${totalExpenseByMonth}</c:if>
-					</p>
+					<div class="statisticDiv">
+						<h3>Estatísticas (${actualMonth})</h3>
+						<p>Total de Receitas: 
+							<c:if test='${totalRecipeByMonth < 1}'>Nenhuma receita registrada</c:if>
+							<c:if test='${totalRecipeByMonth > 0}'>${totalRecipeByMonth}</c:if>
+						</p>
+						<p>Total de Despesas: 
+							<c:if test='${totalExpenseByMonth < 1}'>Nenhuma despesa registrada</c:if>
+							<c:if test='${totalExpenseByMonth > 0}'>${totalExpenseByMonth}</c:if>
+						</p>
+					</div>
 				</div>
 			</div>
 		</div>

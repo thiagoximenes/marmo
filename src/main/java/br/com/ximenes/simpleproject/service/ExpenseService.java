@@ -32,9 +32,9 @@ public class ExpenseService {
 		if(expense.getCreateDate() == null) {
 			Calendar cal = Calendar.getInstance();
 			expense.setCreateDate(sdf.format(cal.getTime()));
-			e = new Expense(expense.getId(), expense.getName(), expense.getCreateDate() , expense.getValue(), expense.getCreateDateAutomatic(), catchMonth(expense));
+			e = new Expense(expense.getId(), expense.getName(), expense.getDescription(), expense.getCreateDate() , expense.getValue(), expense.getCreateDateAutomatic(), catchMonth(expense));
 		}else {
-			e = new Expense(expense.getId(), expense.getName(), expense.getCreateDate(), expense.getValue(), expense.getCreateDateAutomatic(), catchMonth(expense));
+			e = new Expense(expense.getId(), expense.getName(), expense.getDescription(), expense.getCreateDate(), expense.getValue(), expense.getCreateDateAutomatic(), catchMonth(expense));
 		}
 		expenseDao.add(e);
 		result.include("msg", "Receita cadastrada.");
@@ -48,9 +48,9 @@ public class ExpenseService {
 		if(expense.getCreateDate() == null) {
 			Calendar cal = Calendar.getInstance();
 			expense.setCreateDate(sdf.format(cal.getTime()));
-			e = new Expense(expense.getId(), expense.getName(), expense.getCreateDate() , expense.getValue(), expense.getCreateDateAutomatic(), catchMonth(expense));
+			e = new Expense(expense.getId(), expense.getName(), expense.getDescription(), expense.getCreateDate() , expense.getValue(), expense.getCreateDateAutomatic(), catchMonth(expense));
 		}else {
-			e = new Expense(expense.getId(), expense.getName(), expense.getCreateDate(), expense.getValue(), expense.getCreateDateAutomatic(), catchMonth(expense));
+			e = new Expense(expense.getId(), expense.getName(), expense.getDescription(), expense.getCreateDate(), expense.getValue(), expense.getCreateDateAutomatic(), catchMonth(expense));
 		}
 		expenseDao.add(e);
 		result.include("msg", "Receita cadastrada.");
@@ -80,7 +80,7 @@ public class ExpenseService {
 			expense.setCreateDateAutomatic(cal.getTime());
 		}
 		
-		expense = new Expense(expense.getId(), expense.getName(), expense.getCreateDate(), expense.getValue(), expense.getCreateDateAutomatic(), catchMonth(expense));
+		expense = new Expense(expense.getId(), expense.getName(), expense.getDescription(), expense.getCreateDate(), expense.getValue(), expense.getCreateDateAutomatic(), catchMonth(expense));
 		expenseDao.update(expense);
 		result.include("msg", "Receita atualizada.");
 		result.redirectTo(ExpenseController.class).list();

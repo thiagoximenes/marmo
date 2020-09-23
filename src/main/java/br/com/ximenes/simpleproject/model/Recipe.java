@@ -13,8 +13,8 @@ public class Recipe extends Action implements Serializable {
 	
 	public Recipe() {}
 
-	public Recipe(Long id, String name, String createDate, BigDecimal value, Date createDateAutomatic, int month) {
-		super(id, name, createDate, value, createDateAutomatic, month);
+	public Recipe(Long id, String name, String description, String createDate, BigDecimal value, Date createDateAutomatic, int month) {
+		super(id, name, description, createDate, value, createDateAutomatic, month);
 	}
 
 }

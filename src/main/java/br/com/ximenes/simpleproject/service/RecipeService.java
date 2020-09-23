@@ -32,9 +32,9 @@ public class RecipeService {
 		if(recipe.getCreateDate() == null) {
 			Calendar cal = Calendar.getInstance();
 			recipe.setCreateDate(sdf.format(cal.getTime()));
-			r = new Recipe(recipe.getId(), recipe.getName(), recipe.getCreateDate() , recipe.getValue(), recipe.getCreateDateAutomatic(), catchMonth(recipe));
+			r = new Recipe(recipe.getId(), recipe.getName(), recipe.getDescription(), recipe.getCreateDate() , recipe.getValue(), recipe.getCreateDateAutomatic(), catchMonth(recipe));
 		}else {
-			r = new Recipe(recipe.getId(), recipe.getName(), recipe.getCreateDate(), recipe.getValue(), recipe.getCreateDateAutomatic(), catchMonth(recipe));
+			r = new Recipe(recipe.getId(), recipe.getName(), recipe.getDescription(), recipe.getCreateDate(), recipe.getValue(), recipe.getCreateDateAutomatic(), catchMonth(recipe));
 		}
 		recipeDao.add(r);
 		result.include("msg", "Receita cadastrada.");
@@ -48,9 +48,9 @@ public class RecipeService {
 		if(recipe.getCreateDate() == null) {
 			Calendar cal = Calendar.getInstance();
 			recipe.setCreateDate(sdf.format(cal.getTime()));
-			r = new Recipe(recipe.getId(), recipe.getName(), recipe.getCreateDate() , recipe.getValue(), recipe.getCreateDateAutomatic(), catchMonth(recipe));
+			r = new Recipe(recipe.getId(), recipe.getName(), recipe.getDescription(), recipe.getCreateDate() , recipe.getValue(), recipe.getCreateDateAutomatic(), catchMonth(recipe));
 		}else {
-			r = new Recipe(recipe.getId(), recipe.getName(), recipe.getCreateDate(), recipe.getValue(), recipe.getCreateDateAutomatic(), catchMonth(recipe));
+			r = new Recipe(recipe.getId(), recipe.getName(), recipe.getDescription(), recipe.getCreateDate(), recipe.getValue(), recipe.getCreateDateAutomatic(), catchMonth(recipe));
 		}
 		recipeDao.add(r);
 		result.include("msg", "Receita cadastrada.");
@@ -80,7 +80,7 @@ public class RecipeService {
 			recipe.setCreateDateAutomatic(cal.getTime());
 		}
 		
-		recipe = new Recipe(recipe.getId(), recipe.getName(), recipe.getCreateDate(), recipe.getValue(), recipe.getCreateDateAutomatic(), catchMonth(recipe));
+		recipe = new Recipe(recipe.getId(), recipe.getName(), recipe.getDescription(), recipe.getCreateDate(), recipe.getValue(), recipe.getCreateDateAutomatic(), catchMonth(recipe));
 		recipeDao.update(recipe);
 		result.include("msg", "Receita atualizada.");
 		result.redirectTo(RecipeController.class).list();

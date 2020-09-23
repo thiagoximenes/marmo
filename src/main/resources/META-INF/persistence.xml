@@ -6,16 +6,54 @@
 	<persistence-unit name="default">
 		<provider>org.hibernate.ejb.HibernatePersistence</provider>
 		<class>br.com.ximenes.simpleproject.model.Recipe</class>
+		<class>br.com.ximenes.simpleproject.model.Expense</class>
+		<class>br.com.ximenes.simpleproject.model.User</class>
 
 		<properties>
-			<property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver" />
-			<property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost/marmo" />
-			<property name="javax.persistence.jdbc.user" value="root" />
-			<property name="javax.persistence.jdbc.password" value="1234" />
-			<property name="hibernate.dialect" value="org.hibernate.dialect.MySQL5InnoDBDialect" />
-			<property name="hibernate.hbm2ddl.auto" value="update" />
-			<property name="hibernate.show_sql" value="true" />
-			<property name="hibernate.format_sql" value="true" />
+		
+		<!-- 		LOCAL -->
+<!-- 			<property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver" /> -->
+<!-- 			<property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost/marmo" /> -->
+<!-- 			<property name="javax.persistence.jdbc.user" value="root" /> -->
+<!-- 			<property name="javax.persistence.jdbc.password" value="1234" /> -->
+<!-- 			<property name="hibernate.dialect" value="org.hibernate.dialect.MySQL5InnoDBDialect" /> -->
+			
+<!-- 			<property name="hibernate.hbm2ddl.auto" value="update" /> -->
+<!-- 			<property name="hibernate.show_sql" value="true" /> -->
+<!-- 			<property name="hibernate.format_sql" value="false" /> -->
+			
+			
+			<!-- heroku -->
+
+		<property name="hibernate.connection.url" value="postgresql://ec2-3-218-112-22.compute-1.amazonaws.com/d7dkhifut4v51u"/>
+		<property name="hibernate.connection.username" value="smruhjntytwvcb" />
+		<property name="hibernate.connection.password" value="221f0ef4d0970d0b844ae62809f762ded476f768774a5d81ce58dd3e2557ccee" />
+
+		<property name="hibernate.connection.driver_class" value="org.postgresql.Driver" />
+		<property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQLDialect" />
+		<property name="hibernate.hbm2ddl.auto" value="update" />
+		<property name="show_sql" value="true" />
+		<property name="format_sql" value="false" />		
+
+		<property name="hibernate.current_session_context_class" value="thread" />
+
+<!-- 		<property name="hibernate.connection.provider_class">org.hibernate.c3p0.internal.C3P0ConnectionProvider</property> -->
+<!-- 		<property name="hibernate.c3p0.min_size">1</property> -->
+<!-- 		<property name="hibernate.c3p0.max_size">2</property> -->
+<!-- 		<property name="hibernate.c3p0.timeout">1000</property> -->
+<!-- 		<property name="hibernate.c3p0.max_statements">2</property> -->
+<!-- 		<property name="hibernate.c3p0.idle_test_period">10</property> -->
+		<!-- workaround: http://stackoverflow.com/questions/4588755/hibernate-disabling-contextual-lob-creation-as-createclob-method-threw-error -->
+<!-- 		<property name="hibernate.temp.use_jdbc_metadata_defaults">false</property> -->
+
+
+		<!-- entidades -->
+
+<!-- 		<mapping class="br.com.ximenes.simpleproject.model.Recipe" /> -->
+<!-- 		<mapping class="br.com.ximenes.simpleproject.model.Expense" /> -->
+<!-- 		<mapping class="br.com.ximenes.simpleproject.model.User" /> -->
+<!-- 		<mapping class="br.com.ximenes.simpleproject.model.UserType" /> -->
+			
 		</properties>
 	</persistence-unit>
 </persistence>
