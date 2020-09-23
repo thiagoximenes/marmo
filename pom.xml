@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>br.com.ximenes.simpleproject</groupId>
-	<artifactId>simpleproject</artifactId>
+	<artifactId>marmo</artifactId>
 	<version>1.0.0</version>
 	<packaging>war</packaging>
 
@@ -72,10 +72,11 @@
 		<!-- </dependency> -->
 		
 <!-- 		POSTGRE -->
+		<!-- https://mvnrepository.com/artifact/org.postgresql/postgresql -->
 		<dependency>
-			<groupId>postgresql</groupId>
-			<artifactId>postgresql</artifactId>
-			<version>9.1-901.jdbc4</version>
+		    <groupId>org.postgresql</groupId>
+		    <artifactId>postgresql</artifactId>
+		    <version>9.4-1200-jdbc41</version>
 		</dependency>
 		
 		<!-- Heroku Web Runner -->
