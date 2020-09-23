@@ -80,12 +80,12 @@
 		</dependency>
 		
 		<!-- Heroku Web Runner -->
-		<dependency>
-			<groupId>com.github.jsimone</groupId>
-			<artifactId>webapp-runner</artifactId>
-			<version>8.0.33.0</version>
-			<scope>provided</scope>
-		</dependency>
+<!-- 		<dependency> -->
+<!-- 			<groupId>com.github.jsimone</groupId> -->
+<!-- 			<artifactId>webapp-runner</artifactId> -->
+<!-- 			<version>8.0.33.0</version> -->
+<!-- 			<scope>provided</scope> -->
+<!-- 		</dependency> -->
 
 		<dependency>
 			<groupId>javax.inject</groupId>
@@ -118,11 +118,11 @@
                         <configuration>
                             <artifactItems>
                                 <artifactItem>
-                                    <groupId>com.github.jsimone</groupId>
-                                    <artifactId>webapp-runner</artifactId>
-                                    <version>8.0.33.0</version>
-                                    <destFileName>webapp-runner.jar</destFileName>
-                                </artifactItem>
+	                                <groupId>com.github.jsimone</groupId>
+	                                <artifactId>webapp-runner</artifactId>
+	                                <version>8.5.11.2</version>
+	                                <destFileName>webapp-runner.jar</destFileName>
+	                            </artifactItem>
                             </artifactItems>
                         </configuration>
                     </execution>
